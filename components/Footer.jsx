@@ -62,18 +62,16 @@ const Footer = () => {
           <motion.div variants={variants}>
             <h3 className="text-2xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {["Admissions", "Programs", "Campus Life", "Alumni"].map(
-                (link, index) => (
-                  <li key={index}>
-                    <a
-                      href={`#${link.toLowerCase()}`}
-                      className="text-gray-200 hover:text-white transition-all duration-300"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                )
-              )}
+              {["Admissions", "Programs", "About"].map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={`#${link.toLowerCase()}`}
+                    className="text-gray-200 hover:text-white transition-all duration-300"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
             </ul>
           </motion.div>
 

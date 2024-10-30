@@ -37,14 +37,14 @@ const NavBar = () => {
       >
         {/* Logo on the Left */}
         <div className="flex items-center space-x-4">
-          <Link href="/">
+          <Link href="/home">
             <h2 className="text-2xl font-semibold cursor-pointer">LOGO</h2>
           </Link>
         </div>
 
         {/* Centered Links */}
         <nav className="flex space-x-8 font-medium">
-          <Link href="/">
+          <Link href="/home">
             <button className="hover:text-gray-300">Home</button>
           </Link>
           <button
@@ -85,7 +85,7 @@ const NavBar = () => {
       >
         <div className="flex items-center justify-between px-6 py-4">
           {/* Logo */}
-          <Link href="/" passHref>
+          <Link href="/home" passHref>
             <h2 className="text-2xl font-semibold cursor-pointer">LOGO</h2>
           </Link>
 
@@ -119,7 +119,7 @@ const NavBar = () => {
         >
           <ul className="flex flex-col items-center py-16 space-y-8 text-white">
             <li>
-              <Link href="/" scroll={false}>
+              <Link href="/home" scroll={false}>
                 <button className="hover:text-gray-300">Home</button>
               </Link>
             </li>
