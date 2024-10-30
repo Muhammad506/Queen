@@ -25,12 +25,12 @@ const ContactUs = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="w-full max-w-md md:max-w-2xl lg:w-1/2 bg-white shadow-2xl rounded-2xl p-10 space-y-6 border border-gray-200"
+          className="w-full max-w-md md:max-w-2xl lg:w-1/2 bg-white shadow-2xl rounded-2xl px-4 md:px-8  py-10 space-y-6 border border-gray-200"
         >
           <h1 className="text-3xl md:text-4xl font-extrabold text-[#4e342e] text-center">
             Get in Touch
           </h1>
-          <p className="text-gray-600 text-base md:text-lg text-center">
+          <p className="text-gray-600 text-xs md:base xl:text-lg text-center">
             We’d love to hear from you! Please fill out the form below, and
             we’ll respond soon.
           </p>
@@ -41,7 +41,8 @@ const ContactUs = () => {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-md transition focus:outline-none focus:ring-2 focus:ring-[#4e342e] placeholder:text-gray-400"
+                aria-label="Your Name"
+                className="w-full px-4 py-3 border border-gray-300 text-sm md:textbase rounded-lg shadow-md transition focus:outline-none focus:ring-2 focus:ring-[#4e342e] placeholder:text-gray-400"
               />
             </motion.div>
 
@@ -50,7 +51,8 @@ const ContactUs = () => {
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-md transition focus:outline-none focus:ring-2 focus:ring-[#4e342e] placeholder:text-gray-400"
+                aria-label="Your Email"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm md:textbase shadow-md transition focus:outline-none focus:ring-2 focus:ring-[#4e342e] placeholder:text-gray-400"
               />
             </motion.div>
 
@@ -58,19 +60,22 @@ const ContactUs = () => {
             <motion.div whileHover={{ scale: 1.03 }}>
               <textarea
                 placeholder="Your Message"
+                aria-label="Your Message"
                 rows="2"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-md transition focus:outline-none focus:ring-2 focus:ring-[#4e342e] placeholder:text-gray-400"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm md:textbase shadow-md transition focus:outline-none focus:ring-2 focus:ring-[#4e342e] placeholder:text-gray-400 resize-none"
               />
             </motion.div>
 
-            {/* Submit Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full py-3 bg-gradient-to-br from-[#4e342e] via-[#5d4037] to-[#3e2723] text-white font-semibold rounded-lg shadow-lg transition hover:opacity-90 focus:outline-none focus:ring-4 focus:ring-blue-300"
-            >
-              Send Message
-            </motion.button>
+            {/* Centered Submit Button */}
+            <div className="flex justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="py-3 px-8 bg-gradient-to-br from-[#4e342e] via-[#5d4037] to-[#3e2723] text-white font-semibold rounded-lg shadow-lg transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black"
+              >
+                Send Message
+              </motion.button>
+            </div>
           </form>
         </motion.div>
       </section>

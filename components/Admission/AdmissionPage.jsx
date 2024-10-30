@@ -8,7 +8,6 @@ function AdmissionPage() {
     <div>
       <Admissions />
       <Process />
-      <LearnMore />
     </div>
   );
 }
