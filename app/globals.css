@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glowing-border {
+  0% {
+    border-color: #ff0000;
+    box-shadow: 0 0 8px #ff0000, 0 0 16px #ff0000;
+  }
+  33% {
+    border-color: #00ff00;
+    box-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
+  }
+  66% {
+    border-color: #0000ff;
+    box-shadow: 0 0 8px #0000ff, 0 0 16px #0000ff;
+  }
+  100% {
+    border-color: #ff0000;
+    box-shadow: 0 0 8px #ff0000, 0 0 16px #ff0000;
+  }
+}
+
+/* Apply the animation */
+.animate-glowing-border {
+  animation: glowing-border 3s linear infinite;
+  border-radius: 999px; /* Match button's rounded-lg */
+  border-style: solid;
+}
+@layer components {
+  @keyframes slide {
+    0% {
+      background-position: 0% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  .animate-heading {
+    background-image: linear-gradient(to right, blue 0%, blue 100%);
+    background-size: 200% 100%;
+    animation: slide 3s ease-in-out forwards; /* Start animation on reload */
+    color: white; /* Ensure text color remains white */
+  }
+}
+
+/* styles/globals.css */
+
+.perspective {
+  perspective: 1000px; /* Adjust this value to change the depth effect */
+}
+
+.transform-style {
+  transform-style: preserve-3d; /* Preserve 3D transformations */
+}
+
+.backface-hidden {
+  backface-visibility: hidden; /* Hide the back face when facing away */
+}
+
+/* Optional: Add some styling for the Learn More component */
+.learn-more-title {
+  font-size: 1.5rem; /* Adjust title size */
+}
+
+.learn-more-button {
+  background-color: #0070f3; /* Your desired button color */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  transition: opacity 0.3s;
+}
