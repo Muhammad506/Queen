@@ -47,15 +47,13 @@ const NavBar = () => {
           <Link href="/home">
             <button className="hover:text-gray-300">Home</button>
           </Link>
-          <button
-            onClick={() => handleScrollTo("program")}
-            className="hover:text-gray-300"
-          >
-            Program
-          </button>
           <Link href="/exploremore">
             <button className="hover:text-gray-300">About</button>
           </Link>
+          <Link href="/program">
+            <button className="hover:text-gray-300">Program</button>
+          </Link>
+
           <Link href="/admissions">
             <button className="hover:text-gray-300">Admission</button>
           </Link>
@@ -124,18 +122,16 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <button
-                onClick={() => handleScrollTo("program")}
-                className="hover:text-gray-300"
-              >
-                Program
-              </button>
-            </li>
-            <li>
               <Link href="/exploremore">
                 <button className="hover:text-gray-300">About</button>
               </Link>
             </li>
+            <li>
+              <Link href="/program">
+                <button className="hover:text-gray-300">Program</button>
+              </Link>
+            </li>
+
             <li>
               <Link href="/admissions">
                 <button className="hover:text-gray-300">Admission</button>
