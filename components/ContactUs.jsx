@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 
+
 const ContactUs = () => {
   return (
     <main className="bg-[url('/contact-us.jpg')] bg-cover bg-center font-sans-serif min-h-screen w-full">
@@ -71,9 +72,9 @@ const ContactUs = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="py-3 px-8 bg-gradient-to-br from-[#4e342e] via-[#5d4037] to-[#3e2723] text-white font-semibold rounded-lg shadow-lg transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black"
+                className="py-3 px-8 bg-gradient-to-br flex from-[#4e342e] via-[#5d4037] to-[#3e2723] text-white font-semibold rounded-3xl shadow-lg transition hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-black"
               >
-                Send Message
+                Send Message 
               </motion.button>
             </div>
           </form>

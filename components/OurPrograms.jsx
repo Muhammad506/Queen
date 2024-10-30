@@ -79,7 +79,7 @@ const programsData = [
 
 const OurPrograms = () => {
   return (
-    <div className="mx-auto flex flex-col justify-center items-center">
+    <div className="mx-auto flex flex-col justify-center items-center bg-gradient-to-r from-blue-50 via-white to-blue-50">
       <div
         className="bg-[url('/bgProgram.jpg')] bg-cover bg-center p-10 w-full flex items-center justify-center relative"
         style={{ height: "400px" }}
@@ -94,7 +94,7 @@ const OurPrograms = () => {
         {programsData.map((program) => (
           <article
             key={program.id}
-            className="flex flex-col items-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border-x-4 border-[#4e342e]"
+            className="flex flex-col items-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:scale-105 hover:transition-transform duration-300 ease-in-out border-x-4 border-[#4e342e]"
           >
             {program.icon}
             <h3 className="text-xl font-semibold mb-2 text-center text-[#4e342e]">

@@ -7,6 +7,8 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   const [isInView, setIsInView] = useState(false);
@@ -37,19 +39,23 @@ const Footer = () => {
         animate={isInView ? "visible" : "hidden"}
         variants={variants}
         transition={{ duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }}
-        className="container mx-auto text-center"
+        className="container mx-auto"
       >
         {/* Logo Section */}
-        <motion.h2
-          variants={variants}
-          className=" text-3xl md:text-4xl xl:text-5xl text-nowrap font-extrabold tracking-wider mb-10"
-        >
-          Queens College
-        </motion.h2>
+        <div className="flex justify-center mb-10">
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={150}
+              height={150}
+              className="cursor-pointer"
+            />
+          </Link>
+        </div>
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12 border-b border-gray-100 pb-12">
-          {/* About Us */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12 border-b border-gray-300 pb-12">
           <motion.div variants={variants}>
             <h3 className="text-2xl font-semibold mb-4">About Us</h3>
             <p className="text-gray-200 leading-relaxed">
@@ -58,32 +64,35 @@ const Footer = () => {
             </p>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div variants={variants}>
+          <motion.div
+            variants={variants}
+            className="ml-0 md:ml-12 lg:ml-20 xl:ml-36"
+          >
             <h3 className="text-2xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {["Admissions", "Programs", "About"].map((link, index) => (
+              {[
+                { name: "Admissions", path: "/admission" },
+                { name: "Programs", path: "/program" },
+                { name: "About", path: "/about" },
+              ].map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={`#${link.toLowerCase()}`}
-                    className="text-gray-200 hover:text-white transition-all duration-300"
-                  >
-                    {link}
-                  </a>
+                  <Link href={link.path} passHref>
+                    <div className="text-gray-200 hover:text-white transition duration-300">
+                      {link.name}
+                    </div>
+                  </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Contact Section */}
           <motion.div variants={variants}>
             <h3 className="text-2xl font-semibold mb-4">Contact</h3>
-            <p className="text-gray-200 leading-relaxed">
+            <p className="text-gray-200">
               123 University St, City, State, Zip <br />
-              Email:{" "}
               <a
                 href="mailto:contact@queenscollege.edu"
-                className="hover:text-white transition"
+                className="hover:text-white"
               >
                 contact@queenscollege.edu
               </a>
@@ -94,16 +103,21 @@ const Footer = () => {
         </div>
 
         {/* Additional Sections */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
           <motion.div variants={variants}>
             <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-            <p className="text-gray-200 leading-relaxed">
+            <p className="text-gray-200">
               To inspire leadership through transformative education.
             </p>
           </motion.div>
 
-          <motion.div variants={variants}>
-            <h3 className="text-2xl font-semibold mb-4">Upcoming Events</h3>
+          <motion.div
+            variants={variants}
+            className="ml-0 md:ml-8 lg:ml-12  xl:ml-28"
+          >
+            <h3 className="text-2xl font-semibold mb-4 text-nowrap">
+              Upcoming Events
+            </h3>
             <ul className="space-y-3">
               {[
                 "Open House - Jan 15",
@@ -122,7 +136,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          <motion.div variants={variants}>
+          <motion.div variants={variants} className="hidden lg:block">
             <h3 className="text-2xl font-semibold mb-4">Resources</h3>
             <ul className="space-y-3">
               {["Library", "Student Services", "Counseling"].map(
@@ -144,8 +158,7 @@ const Footer = () => {
         {/* Social Media Icons */}
         <motion.div
           variants={variants}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="flex justify-center space-x-8 mt-10"
+          className="flex justify-center space-x-6 mt-16 ml-0 md:ml-12 xl:ml-16"
         >
           {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map(
             (Icon, index) => (
@@ -154,7 +167,7 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-3xl text-gray-400 hover:text-white transition-transform transform hover:scale-110 hover:shadow-lg"
+                className="text-3xl text-gray-400 hover:text-white transition transform hover:scale-110"
               >
                 <Icon />
               </a>
@@ -162,12 +175,12 @@ const Footer = () => {
           )}
         </motion.div>
 
-        {/* Copyright Note */}
+        {/* Copyright */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 1.6 }}
-          className="text-gray-300 mt-12 text-sm text-nowrap"
+          transition={{ duration: 0.8, delay: 1 }}
+          className="text-center text-gray-300 mt-10 text-sm ml-0 md:ml-12 xl:ml-16"
         >
           © {new Date().getFullYear()} Queens College. All rights reserved.
         </motion.p>

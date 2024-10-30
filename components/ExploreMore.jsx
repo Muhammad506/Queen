@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const ExploreMore = () => {
   return (
-    <main className="bg-[url('/Explorebg.jpg')] bg-cover bg-center font-sans-serif min-h-screen">
+    <main className="bg-[url('/Explorebg.jpg')] bg-cover bg-center font-sans-serif min-h-screen ">
       {/* Hero Section */}
       <div className="h-screen bg-gradient-to-br from-black/60 via-black/40 to-transparent flex flex-col justify-center items-start pl-6 md:pl-16 lg:pl-24">
         <div className="xl:w-2/3 md:w-5/6 w-full px-4 md:px-0 xl:px-20 space-y-6">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-white mb-6">
-            Explore Queen`s University
+            Explore Queen's College
           </h1>
 
           <p className="text-white text-base md:text-lg lg:text-xl xl:text-lg leading-relaxed tracking-wide mb-8">
@@ -21,7 +21,7 @@ const ExploreMore = () => {
         </div>
       </div>
 
-      <div className="flex lg:flex-row flex-col  items-center justify-center gap-10 p-8 py-20 md:p-32 bg-[#F1F5F9] ">
+      <div className="flex lg:flex-row flex-col  items-center justify-center gap-10 p-8 py-20 md:p-32 bg-gradient-to-r from-blue-50 via-white to-blue-50 ">
         {/* Left Side */}
         <div className="flex flex-col justify-center h-full w-full lg:w-4/5  md:pr-10">
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-[#4e342e]  font-bold mb-4">

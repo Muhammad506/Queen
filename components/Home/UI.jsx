@@ -22,11 +22,13 @@ const UI = () => {
 
   return (
     <div className="w-screen h-screen bg-gradient-to-r from-blue-50 via-white to-blue-50 flex justify-center items-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 w-full h-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 w-full h-full ">
+        {" "}
+      
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative overflow-hidden group transition-transform duration-300 bg-white shadow-lg hover:shadow-xl"
+            className="relative overflow-hidden group transition-transform duration-300 bg-white shadow-lg hover:shadow-2xl  "
           >
             <img
               src={image.src}
@@ -34,7 +36,8 @@ const UI = () => {
               className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300 opacity-100 md:opacity-0 group-hover:opacity-100">
-              <span className="text-white lg:text-xl md:text-base text-lg font-bold text-center transform scale-100 transition-transform duration-300 group-hover:scale-110">
+              <span className="text-white text-xl font-semibold text-center transform scale-100 transition-transform duration-300 group-hover:scale-110">
+          
                 {image.text}
               </span>
             </div>

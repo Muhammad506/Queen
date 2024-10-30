@@ -34,7 +34,7 @@ const VoicesOfExperience = () => {
         <h2 className="text-3xl md:text-4xl xl:text-5xl pb-10 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#4e342e] via-[#5d4037] to-[#3e2723] transition-transform transform hover:scale-105 text-center mb-6">
           Voices of Experience
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 gap-4 xl:gap-0">
           {voices.map((voice, index) => (
             <div
               key={index}
